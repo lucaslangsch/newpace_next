@@ -1,5 +1,5 @@
 :root {
-  --max-width: 1400px;
+  --max-width: 1440px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
@@ -85,6 +85,10 @@ h2 {
 
 h3 {
   font-size: var(--font-large-01)
+}
+
+h4 {
+  font-size: var(--font-medium-02);
 }
 
 a {

@@ -6,24 +6,25 @@
   flex-direction: column;
   /* position: absolute; */
   /* top: 80px; */
+  position: relative;
 }
 
 .section {
   position: relative;
   width: 100vw;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .bannerIntro {
   clip-path: inset(0 0 0 0);
-  height: 650px;
+  height: 500px;
   /* position: relative; */
   width: 100%;
 }
 
 .bannerIntroImageContainerShadow {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.75) 100%);
-  height: 650px;
+  height: 500px;
   position: absolute;
   width: 100vw;
   z-index: 20;
@@ -31,7 +32,7 @@
 
 .bannerIntroImageContainer {
   /* top: 80px; */
-  height: 650px;
+  height: 500px;
   left: 0;
   position: fixed;
   /*   position: absolute; */
@@ -43,187 +44,18 @@
   object-fit: cover;
 }
 
-.about {
-  display: flex;
-  margin: 100px auto 0 auto;
+.sectionProduct {
   max-width: var(--max-width);
-}
-
-.balta {
   display: flex;
-  height: 600px;
-  margin-top: 100px;
-  position: relative;
-  width: 100%;
-}
-
-.balta::before {
-  background: #e7e7e7;
-  /* background: linear-gradient(0deg, rgba(126, 36, 0, 1) 0%, rgba(191, 55, 0, 1) 100%); */
-  content: '';
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: calc(50vw + 250px);
-  z-index: -1;
-}
-
-.baltaInterior {
-  display: flex;
-  gap: 20px;
-  margin: 0 auto;
-  max-width: var(--max-width);
-  min-width: 1000px;
-  padding-bottom: 100px;
-  padding-top: 100px;
-}
-
-.baltaImageContainer {
-  height: 100%;
-  margin: 0;
-  position: relative;
-  width: 50%;
-}
-
-.baltaImage {
-  border-radius: 10px;
-  object-fit: cover;
-  object-position: center;
-  position: relative;
-}
-
-.bannerModality {
-  /* max-width: 1400px; */
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 100px auto 0 auto;
-}
-
-.bannerModalityParallax {
-  position: relative;
-  height: 70vh;
-  width: 100%;
-  clip-path: inset(0 0 0 0);
-}
-
-.bannerModalityShadow {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.75) 100%);
-  height: 70vh;
-  position: relative;
-  width: 100%;
-  z-index: 20;
-}
-
-.bannerModalityImageContainer {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.bannerModalityBike {
-  object-fit: scale-down;
-  object-position: -40% 100%;
-  position: relative;
-}
-
-.bannerModalityRun {
-  object-fit: scale-down;
-  object-position: 50% 100%;
-  position: relative;
-}
-
-.bannerModalitySwim {
-  object-fit: scale-down;
-  object-position: 100% 90%;
-  position: relative;
-}
-
-.modalitySection {
-  margin: 100px auto 0 auto;
-  max-width: var(--max-width);
-}
-
-.modalitySectionGrid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
-  margin: 50px auto 0 auto;
-}
-
-.modalitySport {
-  display: flex;
-  gap: 20px;
-}
-
-.modalityGridContainerImage {
-  background: linear-gradient(0deg, rgba(126, 36, 0, 1) 0%, rgba(191, 55, 0, 1) 100%);
-  border-radius: 8px;
-  height: auto;
-  min-width: 150px;
-  position: relative;
-}
-
-.modalityGridImage {
-  object-fit: contain;
-  object-position: center;
-  position: relative;
-}
-
-.modalitySportText {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: fit-content;
-}
-
-.modalityButton {
-  background-color: rgba(126, 36, 0, 1);
-  border-radius: 8px;
-  border: none;
-  color: wheat;
-  cursor: pointer;
-  font-size: var(--font-small-03);
-  font-weight: 900;
-  padding: 8px 18px;
-  width: fit-content;
-}
-
-.modalityButton:hover {
-  background-color: rgba(156, 36, 0, 1);
-  transform: scale(1.1);
-}
-
-.depoSection {
-  align-items: center;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
   justify-content: center;
-  margin: 200px auto 0 auto;
-  max-width: 1400px;
+  flex-wrap: wrap;
+  padding-inline: 50px;
 }
 
-.depoCard {
-  align-items: center;
-  background-color: #e7e7e7;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px 40px;
-  position: relative;
+.iconCart {
+  position: fixed;
+  z-index: 100;
+  right: 30px;
+  bottom: 30px;
 }
-
-.depoImage {
-  border-radius: 10px;
-  height: 200px;
-  margin-top: -110px;
-  position: relative;
-  width: 100%;
-}
-
-/* Mobile */
-@media (max-width: 700px) {}

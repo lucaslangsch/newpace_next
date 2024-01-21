@@ -41,28 +41,24 @@ export default function Header() {
 
   return (
     <header className={headerClasses}>
-      <div className={styles.headerDivImage}>
-        <Image
-          className={styles.headerLogoImage}
-          src={logo}
-          alt="Logo Newpace"
-          fill
-          sizes="100px"
-          priority
-        />
-      </div>
-      <div className={styles.headerDivLinks}>
-        <ul className={styles.headerDivLinksList}>
-          <li>
-            <Link href="/">INÍCIO</Link>
-          </li>
-          <li>
-            <Link href="/planos">PLANOS</Link>
-          </li>
-          <li>
-            <Link href="/modalidades">MODALIDADES</Link>
-          </li>
-        </ul>
+      <div className={styles.headerDiv}>
+        <div className={styles.headerDivImage}>
+          <Image
+            className={styles.headerLogoImage}
+            src={logo}
+            alt="Logo Newpace"
+            fill
+            sizes="100px"
+            priority
+          />
+        </div>
+        <div className={styles.headerDivLinks}>
+          <ul className={styles.headerDivLinksList}>
+            <li>
+              <Link href="https://newpace.com.br">INÍCIO</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );

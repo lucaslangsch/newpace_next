@@ -1,15 +1,24 @@
 .header {
-  align-items: center;
+  /* align-items: center; */
   background-color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 calc((100% - var(--max-width))/2);
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* padding: 0 calc((100% - var(--max-width))/2); */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  width: 100%;
   z-index: 20;
+  transition: ease 0.5s;
+}
+
+.headerDiv {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-inline: 50px;
+  max-width: calc(var(--max-width) + 100px)
 }
 
 .headerHidden {
