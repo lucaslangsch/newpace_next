@@ -1,7 +1,28 @@
+'use client'
+
 import styles from './product.module.css';
 import Image from 'next/image';
+import AddProduct from './addProduct';
+import { useGlobalContext } from '@/app/Context/store';
 
 export default function Product({data, index}) {
+  const { products, setProducts } = useGlobalContext()
+  function onAddClick({event, data}) {
+    event.preventDefault()
+    
+    const productExists = products.some((product) => product.description === data.title);
+
+    if (!productExists) {
+      const newProduct = {
+        quantity: 1,
+        price: data.price,
+        amount: data.price,
+        description: data.title,
+      };
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+    }
+  }
+
   return (
     <>
       <div className={styles.productInfo}>
@@ -15,21 +36,9 @@ export default function Product({data, index}) {
           alt="Roupa de Treino - Macaquinho"
         />
       </div>
+      {/* {products && products.length > 1} */}
       <p className={styles.productInfoPrice}>Preço: R${data.price.toFixed(2)}</p>
-      <div className={styles.productOpt}>
-        <div className={styles.input}>
-          <label htmlFor={`addToChart${index}`}>Adicionar ao Carrinho</label>
-          <input type="checkbox" name={`addToChart${index}`} id={`addToChart${index}`} />
-        </div>
-        <div className={styles.select}>
-        <label htmlFor={`selectSize${index}`}>Tamanhos</label>
-          <select name={`selectSize${index}`} id={`selectSize${index}`}>
-            <option value="someOption">P</option>
-            <option value="someOption">M</option>
-            <option value="someOption">G</option>
-          </select>
-        </div>
-      </div>
+        <AddProduct key={index} data={data} index={index}/>
       </div>
     </>
   )

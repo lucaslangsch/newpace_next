@@ -6,7 +6,6 @@ import { productList } from "./utils/productList";
 import Product from "./components/Product/product";
 import Header from "./components/Header/header";
 
-
 export default function Home() {
   return (
     <>

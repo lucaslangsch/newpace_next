@@ -1,0 +1,26 @@
+.productOpt {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+}
+
+.input label {
+  text-align: right;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.productOpt input {
+  width: 18px;
+}
