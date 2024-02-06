@@ -1,13 +1,10 @@
 import Image from 'next/image';
 import styles from './page.module.css';
-import image_01 from '../public/geral_03.jpg';
-import { productList } from "./utils/productList";
-import Product from "./components/Product/product";
-import Chart from './components/Product/chart';
-import Header from "./components/Header/header";
-import Link from 'next/link';
+import image_01 from '../../public/bike_03.jpg';
+import Header from "../components/Header/header";
+import Checkout from '../components/Checkout/checkout';
 
-export default function Home() {
+export default function HomeCheckout() {
   return (
     <>
       <Header></Header>
@@ -27,15 +24,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className={styles.sectionProduct}>
-          {productList.map((product, index) => (
-            <Product key={index} data={product} index={index}/>
-          ))}
+        <section>
+          <Checkout />
         </section>
-          <div className={styles.iconCart}>
-            <Chart />
-          </div>
       </main>
     </>
   )

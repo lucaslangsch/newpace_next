@@ -4,23 +4,43 @@ import { useGlobalContext } from '@/app/Context/store';
 import { useEffect, useState } from 'react';
 
 export default function AddProduct({ data, index }) {
-  const { products, setProducts } = useGlobalContext()
+  const { products, setProducts, total, setTotal } = useGlobalContext()
+  const [size, setSize] = useState()
+
+  useEffect(() => {
+    setSize(data.size[0])
+  }, []);
 
   function onAddClick({ event, data }) {
     event.preventDefault()
-    const selectedSize = document.getElementById(`selectSize${index}`).value;
     const newProduct = {
+      title: data.title,
+      description: size,
+      picture_url: null,
+      category_id: 'fashion',
       quantity: 1,
-      price: data.price,
-      amount: data.price,
-      description: `${data.title} - ${selectedSize}`,
+      currency_id: 'BRL',
+      unit_price: data.price,
+      id: data.id
     };
-    setProducts((prevProducts) => [...prevProducts, newProduct]);
+    const existingProductIndex = products.findIndex(
+      (product) => product.description === newProduct.description && product.title === newProduct.title
+    );
+  
+    if (existingProductIndex !== -1) {
+
+      const updatedProducts = [...products];
+      updatedProducts[existingProductIndex].quantity += 1;
+      setProducts(updatedProducts);
+    } else {
+
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+    }
   }
 
-  useEffect(() => {
-    console.log(products);
-  }, [products]);
+  function handleChange({event}) {
+    setSize(event.target.value);
+  }
 
   return (
     <div className={styles.productOpt}>
@@ -28,12 +48,12 @@ export default function AddProduct({ data, index }) {
         <button
           onClick={(event) => onAddClick({ event, data })}
         >
-          Adicionar ao Carrinho
+          Adicionar
         </button>
       </div>
       <div className={styles.select}>
         <label htmlFor={`selectSize${index}`}>Tamanhos</label>
-        <select name={`selectSize${index}`} id={`selectSize${index}`}>
+        <select name={`selectSize${index}`} id={`selectSize${index}`} value={size} onChange={(event) => handleChange({ event })}>
           {data.size.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}

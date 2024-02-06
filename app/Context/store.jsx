@@ -6,9 +6,10 @@ const GlobalContext = createContext({});
 
 export function GlobalContextProvider({ children }) {
   const [products, setProducts] = useState([]);
+  const [total, setTotal] = useState(0);
 
   return (
-    <GlobalContext.Provider value={{ products, setProducts }}>
+    <GlobalContext.Provider value={{ products, setProducts, total, setTotal }}>
       { children }
     </GlobalContext.Provider>
   );

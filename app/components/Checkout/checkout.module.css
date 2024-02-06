@@ -1,0 +1,41 @@
+.containerListProducts {
+  border: 2px solid black;
+  padding: 20px;
+  min-width: 400px;
+  margin-top: 40px;
+}
+
+.containerListProducts ul{
+  margin-block: 0px;
+  list-style: none;
+}
+
+.ListProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 20px;
+}
+
+.ListProduct button {
+  padding: 10px 20px;
+  background-color: rgb(122, 0, 0);
+  color: white;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.ListProduct button:active {
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 450px) {
+  .containerListProducts {
+    margin-inline: 20px;
+    min-width: 300px;
+  }
+}
