@@ -2,7 +2,7 @@
   border: 2px solid black;
   padding: 20px;
   min-width: 400px;
-  margin-top: 40px;
+  margin-block: 40px;
 }
 
 .containerListProducts ul{
@@ -17,7 +17,7 @@
   margin-block: 20px;
 }
 
-.ListProduct button {
+.ListProduct button, .formBtn {
   padding: 10px 20px;
   background-color: rgb(122, 0, 0);
   color: white;
@@ -32,6 +32,19 @@
   transform: scale(1.1);
 }
 
+.formBtn {
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-block: 20px;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
 
 @media (max-width: 450px) {
   .containerListProducts {

@@ -28,23 +28,15 @@ export default function Checkout() {
   };
 
   const onRemove = ({ event, product }) => {
-    event.preventDefault();
-
-    const existingProductIndex = products.findIndex(
-      (p) => p.description === product.description && p.size === product.size
-    );
-
-    if (existingProductIndex !== -1) {
-      const updatedProducts = [...products];
-
-      if (updatedProducts[existingProductIndex].quantity > 1) {
-        updatedProducts[existingProductIndex].quantity -= 1;
-      } else {
-        updatedProducts.splice(existingProductIndex, 1);
+    event.preventDefault()
+    const updatedItems = products.map(p => {
+      if (p.id === product.id && p.description === product.description) {
+        return { ...p, quantity: p.quantity - 1 };
       }
-
-      setProducts(updatedProducts);
-    }
+      return p;
+    }).filter(p => p.quantity > 0);
+    
+    setProducts(updatedItems);
   };
 
   const loadWallet = () => {
@@ -104,37 +96,31 @@ export default function Checkout() {
           </li>
         ))}
       </ul>
-      <div>
-      <label>
-        Nome:
-        <input
-          type="text"
-          id="input-name"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          id="input-email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label>
-        Telefone:
-        <input
-          type="tel"
-          id="input-phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleInputChange}
-        />
-      </label>
+      <div className={styles.form}>
+        <label htmlFor='input-name'>Nome:</label>
+          <input
+            type="text"
+            id="input-name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+        <label htmlFor='input-email'>Email:</label>
+          <input
+            type="email"
+            id="input-email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+        <label htmlFor='input-phone'>Telefone:</label>
+          <input
+            type="tel"
+            id="input-phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+          />
       </div>
       {
         products.length > 0 && preferenceId ? (
@@ -143,7 +129,7 @@ export default function Checkout() {
           </Suspense>
         ) : products.length > 0 && !preferenceId ? (
           <>
-            <button onClick={buy}>Comprar</button>
+            <button className={styles.formBtn} onClick={buy}>Continuar</button>
             <h4>Por favor preencha seus dados</h4>
           </>
         ) : products.length <= 0 ? (
