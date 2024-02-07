@@ -48,9 +48,9 @@ export default function Checkout() {
         },
         body: JSON.stringify({
           'back_urls': {
-            "success": "https://uniformes.newpace.com.br/checkout/status?Aprovado",
-            "failure": "https://uniformes.newpace.com.br/checkout/status?Recusado",
-            "pending": "https://uniformes.newpace.com.br/checkout/status?Pendente_aguarde_seu_banco"
+            "success": "https://uniformes.newpace.com.br/checkout/status?statusCompraNP=Aprovado",
+            "failure": "https://uniformes.newpace.com.br/checkout/status?statusCompraNP=Recusado",
+            "pending": "https://uniformes.newpace.com.br/checkout/status?statusCompraNP=Pendente@por@favor@aguarde@confirmação@do@seu@banco"
           },
           "auto_return": "approved",
           'differential_pricing': {
@@ -94,7 +94,7 @@ export default function Checkout() {
       <ul>
         {products.map((product, index) => (
           <li className={styles.ListProduct} key={index}>
-            <span>{product.quantity}x {product.title} {product.description} R${product.unit_price.toFixed(2)}</span>
+            <span>{product.quantity}x {product.title} R${product.unit_price.toFixed(2)}</span>
             <button
               onClick={(event) => onRemove({ event, product })}
             >Remover</button>

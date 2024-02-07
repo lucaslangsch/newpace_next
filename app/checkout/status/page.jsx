@@ -5,7 +5,8 @@ import styles from './page.module.css';
 import image_01 from '../../../public/bike_03.jpg';
 
 export default function Status() {
-  const param = useSearchParams();
+  const searchParams = useSearchParams();
+  const status = searchParams.get("statusCompraNP").split('@').join(' ');
  
   return (
     <>
@@ -26,7 +27,7 @@ export default function Status() {
           </div>
         </section>
         <section>
-          <h2 style={{marginTop: '40px'}}>Pagamento {param}</h2>
+          <h2 style={{marginTop: '40px'}}>Pagamento {status}</h2>
         </section>
       </main>
     </>

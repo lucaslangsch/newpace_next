@@ -14,7 +14,7 @@ export default function AddProduct({ data, index }) {
   function onAddClick({ event, data }) {
     event.preventDefault()
     const newProduct = {
-      title: data.title,
+      title: `${data.title} - ${size}`,
       description: size,
       picture_url: null,
       category_id: 'fashion',
