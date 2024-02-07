@@ -47,7 +47,12 @@ export default function Checkout() {
           'Authorization': `Bearer ${process.env.auth}`
         },
         body: JSON.stringify({
-          'back_urls': {},
+          'back_urls': {
+            "success": "https://uniformes.newpace.com.br/checkout/status?Aprovado",
+            "failure": "https://uniformes.newpace.com.br/checkout/status?Recusado",
+            "pending": "https://uniformes.newpace.com.br/checkout/status?Pendente_aguarde_seu_banco"
+          },
+          "auto_return": "approved",
           'differential_pricing': {
             'id': Number(process.env.differencialPrincing)
           },
