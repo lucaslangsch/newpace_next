@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import '../globals.css'
-import { GlobalContextProvider } from '../Context/store'
-import Head from 'next/head';
+import Header from '../components/Header/header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,6 +12,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
       <>
+        <Header />
         {children}
       </>
   )

@@ -7,7 +7,6 @@ import Checkout from '../components/Checkout/checkout';
 export default function HomeCheckout() {
   return (
     <>
-      <Header></Header>
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.bannerIntro}>

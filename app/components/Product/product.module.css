@@ -22,6 +22,10 @@
   font-weight: 500;
 }
 
+.linkMedidas {
+  padding-block: 15px;
+}
+
 /* Mobile */
 @media (max-width: 1024px) {
   .productInfo {

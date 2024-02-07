@@ -1,0 +1,45 @@
+.main {
+  /* height: 100vh; */
+  /* position: relative; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  /* top: 80px; */
+  position: relative;
+}
+
+.section {
+  position: relative;
+  width: 100vw;
+  /* height: 100%; */
+}
+
+.bannerIntro {
+  clip-path: inset(0 0 0 0);
+  height: 500px;
+  /* position: relative; */
+  width: 100%;
+}
+
+.bannerIntroImageContainerShadow {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.75) 100%);
+  height: 500px;
+  position: absolute;
+  width: 100vw;
+  z-index: 20;
+}
+
+.bannerIntroImageContainer {
+  /* top: 80px; */
+  height: 500px;
+  left: 0;
+  position: fixed;
+  /*   position: absolute; */
+  width: 100%;
+}
+
+.bannerIntroImage {
+  object-position: 50% 50%;
+  object-fit: cover;
+}

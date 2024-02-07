@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import styles from './checkout.module.css';
 import { Suspense } from 'react';
 
-initMercadoPago("TEST-fd35b829-6906-4d8c-a5af-e9d26976c69e");
+initMercadoPago(process.env.pKey);
 
 export default function Checkout() {
   const { products, setProducts, total, setTotal } = useGlobalContext()
@@ -44,12 +44,12 @@ export default function Checkout() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer TEST-5478545679359546-071217-c2defb4b6ce26c85472e5c9928ee6557-204596992'
+          'Authorization': `Bearer ${process.env.auth}`
         },
         body: JSON.stringify({
           'back_urls': {},
           'differential_pricing': {
-            'id': 204596992
+            'id': Number(process.env.differencialPrincing)
           },
           'expires': false,
           'items': products,

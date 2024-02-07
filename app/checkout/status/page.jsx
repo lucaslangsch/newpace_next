@@ -1,16 +1,14 @@
+'use client'
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import styles from './page.module.css';
-import image_01 from '../public/geral_03.jpg';
-import { productList } from "./utils/productList";
-import Product from "./components/Product/product";
-import Chart from './components/Product/chart';
-import Header from "./components/Header/header";
-import Link from 'next/link';
+import image_01 from '../../../public/bike_03.jpg';
 
-export default function Home() {
+export default function Status() {
+  const param = useSearchParams();
+ 
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.bannerIntro}>
@@ -27,15 +25,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className={styles.sectionProduct}>
-          {productList.map((product, index) => (
-            <Product key={index} data={product} index={index}/>
-          ))}
+        <section>
+          <h2 style={{marginTop: '40px'}}>Pagamento {param}</h2>
         </section>
-          <div className={styles.iconCart}>
-            <Chart />
-          </div>
       </main>
     </>
   )

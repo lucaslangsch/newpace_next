@@ -55,7 +55,10 @@ export default function Header() {
         <div className={styles.headerDivLinks}>
           <ul className={styles.headerDivLinksList}>
             <li>
-              <Link href="https://newpace.com.br">INÍCIO</Link>
+              <Link href="https://newpace.com.br">NEWPACE</Link>
+            </li>
+            <li>
+              <Link href="https://uniformes.newpace.com.br">LOJA</Link>
             </li>
           </ul>
         </div>

@@ -7,13 +7,13 @@ export default function Product({data, index}) {
     <>
       <div className={styles.productInfo}>
       <h4 className={styles.productInfoTitle}>{data.title}</h4>
-      <p className={styles.productInfoDesc}>{data.desc}</p>
+      <a href='https://back-np.vercel.app/download' className={styles.linkMedidas}>Tabela de Medidas</a>
       <div className={styles.productDivImg}>
         <Image 
           src={data.image}
           width={400}
           height={266}
-          alt="Roupa de Treino - Macaquinho"
+          alt={data.title}
         />
       </div>
       <p className={styles.productInfoPrice}>Preço: R${data.price.toFixed(2)}</p>
