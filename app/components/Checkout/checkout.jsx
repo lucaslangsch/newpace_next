@@ -130,7 +130,7 @@ export default function Checkout() {
       {
         products.length > 0 && preferenceId ? (
           <Suspense>
-            <Wallet initialization={{ preferenceId: preferenceId, redirectMode: 'blank' }} />
+            <Wallet initialization={{ preferenceId: preferenceId }} />
           </Suspense>
         ) : products.length > 0 && !preferenceId ? (
           <>
